@@ -1,85 +1,91 @@
 
-var x = document.getElementById("menu");
-var burger = document.getElementById("burger");
+let menu = document.getElementById("menu");
+let hamburger = document.getElementById("burger");
 
-burger.addEventListener("click",function(){
+// open/close hamburgermenu
+hamburger.addEventListener("click",function(){
 
-  if (x.style.left ==="0px") {
-    x.style.left ="-100%";
+  if (menu.style.left ==="0px") {
+    menu.style.left ="-100%";
   } 
   else  {
-    x.style.left = "0px";
+    menu.style.left = "0px";
   }
 
 });
 
-x.addEventListener('click', handleMenuClick);
+// when menu link clicked close menu
+menu.addEventListener('click', handleMenuClick);
 
     function handleMenuClick(event) {
  
       if (event.target instanceof HTMLAnchorElement) {
-        x.style.left ="-100%";
+        menu.style.left ="-100%";
       }
     }
 
 
+ // smoothscroll
 const scroll = new SmoothScroll('.menu a[href*="#"]', {
 
     speed: 800
    });
 
 
-// Get the modal
-var modal1 = document.getElementById("Modal1");
-var modal2 = document.getElementById("Modal2");
-var modal3 = document.getElementById("Modal3");
+let modals = document.getElementsByClassName("modal");
+let projects = document.getElementsByClassName("project");
+let close = document.getElementsByClassName("close");
 
-// Get the button that opens the modal
-var project1 = document.getElementById("project1");
-var project2 = document.getElementById("project2");
-var project3 = document.getElementById("project3");
 
-// Get the <span> element that closes the modal
-var span1 = document.getElementsByClassName("close")[0];
-var span2 = document.getElementsByClassName("close")[1];
-var span3 = document.getElementsByClassName("close")[2];
 
-// When the user clicks on the button, open the modal
-project1.onclick = function() {
-  modal1.style.height = "100%";
+// open modal of projects
+for (let project of projects) {
+
+    project.addEventListener("click",function(){
+
+    if(project.id == "project1"){
+       modals[0].style.height = "100%";
+    }
+    else if(project.id == "project2"){
+      modals[1].style.height = "100%";
+    }
+    else if(project.id == "project3"){
+      modals[2].style.height = "100%";
+    }
+  })
+  
 }
 
-project2.onclick = function() {
-    modal2.style.height = "100%";
-  }
+// close modal of projects
 
-project3.onclick = function() {
-   modal3.style.height = "100%";
-  }
+for (let x of close) {
 
-// When the user clicks on <span> (x), close the modal
-span1.onclick = function() {
-  modal1.style.height = "0px";
+  x.addEventListener("click",function(){
+
+  if(x.id == "close1"){
+     modals[0].style.height = "0px";
+  }
+  else if(x.id == "close2"){
+    modals[1].style.height = "0px";
+  }
+  else if(x.id == "close3"){
+    modals[2].style.height = "0px";
+  }
+})
+
 }
 
-span2.onclick = function() {
-    modal2.style.height = "0px";
-  }
-span3.onclick = function() {
-    modal3.style.height = "0px";
-  }
-
-// When the user clicks anywhere outside of the modal, close it
+// close modal of projects when clicked anywhere
 window.onclick = function(event) {
-  if (event.target == modal1) {
-    modal1.style.height = "0px";
+  if (event.target == modals[0]) {
+    modals[0].style.height = "0px";
   }
-  else if(event.target == modal2){
-    modal2.style.height = "0px";
+  else if(event.target == modals[1]){
+    modals[1].style.height = "0px";
   }
 
-  else if(event.target == modal3){
-    modal3.style.height = "0px";
+  else if(event.target == modals[2]){
+    modals[2].style.height = "0px";
 
   }
   

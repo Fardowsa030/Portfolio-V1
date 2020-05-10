@@ -54,6 +54,7 @@ nav .menu{
 nav .menu li{
     margin-left: 25px;
     cursor: pointer;
+    transition: all .2s ease-in-out;
     
     
 }
@@ -416,9 +417,7 @@ border-radius: 20px;
   }
 
   .email .text h3{
-      font-weight: 400;
-      line-height: 1.6;
-    
+      font-weight: 600;
   }
 
   .email #contact{
@@ -426,6 +425,11 @@ border-radius: 20px;
       background-color: #a79344;
       color: #fff;
       padding: 15px 30px;
+      transition: all .2s ease-in-out;
+  }
+
+  .email #contact:hover{
+     transform: scale(1.2);
   }
 /*****************************/
 .contact2{
@@ -456,8 +460,6 @@ border-radius: 20px;
 }
 
 .contact2 .social li{
-   padding: 10px;
-   border: 1px solid #fff;
    margin-left: 20px;
    cursor: pointer;
   
@@ -466,8 +468,16 @@ border-radius: 20px;
 .contact2 li a{
     color: #fff;
     text-decoration: none;
+    border: 1px solid #fff;
+    padding: 10px;
 }
 
+.contact2 li a:hover{
+    color: #a79344;
+    background-color: #fafafa;
+   
+    
+}
 
 .contact2 .social li i{
   font-size: 20px;
@@ -480,49 +490,6 @@ border-radius: 20px;
 }
 
 /*******************************/
-
-@media only screen and (max-width: 800px) {
-
-    nav .menu{
-    
-        border-top: 1px solid #000;
-        width: 100%;
-        height: auto;
-        flex-direction: column;
-        position: fixed;
-        background-color: #fafafa;
-        align-items: baseline;
-        padding:20px 35px;
-        justify-content: flex-start;
-        top: 70px;
-        left: -100%;
-        transition: all .5s ease-in-out;
-        
-    }
-
-    nav .logo{
-       
-        width: 90%;
-        
-    }
-
-    nav .logo h2{
-        font-weight: 600;
-        font-size: 20px;
-     
-
-        
-    }
-
-    nav .menu li{
-        margin:20px 0px;
-    }
-
-    nav .menu .button{
-        display: inline-block;
-    }
-
-}
 
 
 
@@ -574,6 +541,15 @@ border-radius: 20px;
         display: block;
     }
 
+    nav .logo{
+        
+        width: 90%;
+    }
+
+    nav .logo h2{
+        font-size: 20px;
+    }
+
 }
 
 @media (min-width:450px) and (max-width:800px) {
@@ -607,4 +583,4 @@ border-radius: 20px;
     
 
 
-
+}
